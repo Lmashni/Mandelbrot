@@ -125,7 +125,7 @@ def normalize(xx):
     return (xx.real+xx.real.min())/(xx.real+xx.real.min()).max()
 
 def show(xx,cnt,l):
-    rc.update({'font.size': 12})
+    rc.update({'font.size': 7})
 
     #plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
     #plt.imshow(xx.real,alpha=normalize(xx**(2)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
@@ -133,7 +133,7 @@ def show(xx,cnt,l):
 
     plt.imshow(xx.real,alpha=normalize(xx**(1)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
     plt.title('diverged after n iteration of '
-                  r'$z_{n}(c) = z_{n-1} + c $'
+                  r'$z_{n}(c) = z_{n-1}² + c $'
                   '\n at   '
                   r'$c = x + yi$')
     plt.xlabel('x')
