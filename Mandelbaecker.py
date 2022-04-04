@@ -67,13 +67,13 @@ def label_nans(x):
     
     Discard nans from given array. Sets nans to 0 and other to 1
      
-    
     Parameters
     ----------
-    z : ndarray
+    x : ndarray
+        any numpy array
     -------
     out : ndarray
-        array with 1s where there was no nan
+        array with 1s where there was no nan and 0s otherwise.
     """
     #for x,i in zip(X,range(len(X))):
     x[np.logical_not( np.isnan(x))] = 1
@@ -81,6 +81,25 @@ def label_nans(x):
     return x
 
 def divergence_map(z,cnt,itrs):
+    """
+    divergence_map(z,cnt,itrs)
+    
+    Constructs a map showing the number of iterations at which a given point in the complex plane diverges to infinity.
+    Infitity here simply being whenever overflow occures while applying Mandel_Iter and the function returns 
+    nan or inf. This obviuosly depends on the data tpye pressicion (float, double , etc.) and the resolution 
+    selected.
+    
+    Parameters
+    ----------
+    z : ndarray
+        array of initial values. z = 0 for the mandelbrot set.
+    cnt : complex 
+        complex number arround which the array fould be centered.
+    iters : Number of iterations to execute.
+    -------
+    out : ndarray
+        array with the number of iterations at which a given point overflowd
+    """
     x = np.zeros(z.shape,dtype = complex)
     for i in range(itrs):
         if i%int(itrs/5)==0:
@@ -90,16 +109,29 @@ def divergence_map(z,cnt,itrs):
     return x
 
 def normalize(xx):
+    """
+    normalize(xx)
+    
+    linearly maps the values of an array to  the interval [0,1]
+     
+    Parameters
+    ----------
+    xx : ndarray
+        any numpy array
+    -------
+    out : ndarray
+        noramlized array
+    """
     return (xx.real+xx.real.min())/(xx.real+xx.real.min()).max()
 
 def show(xx,cnt,l):
     rc.update({'font.size': 12})
 
-    plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
-    plt.imshow(xx.real,alpha=normalize(xx**(2)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
-    plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
+    #plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
+    #plt.imshow(xx.real,alpha=normalize(xx**(2)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
+    plt.imshow(xx.real,alpha=normalize(1/xx**2),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
 
-    plt.imshow(xx.real,alpha=normalize(xx**(2)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
+    plt.imshow(xx.real,alpha=normalize(xx**(2)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno'
     plt.title('diverged after n iteration of '
                   r'$z_{n}(c) = z_{n-1} + c $'
                   '\n at   '
