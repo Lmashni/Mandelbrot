@@ -103,7 +103,7 @@ def divergence_map(z,cnt,itrs):
     x = np.zeros(z.shape,dtype = complex)
     for i in range(itrs):
         if i%int(itrs/5)==0:
-            print(i)
+            print(i,'of',str(itrs),'iterations completed')
         z = Mandel_Iter(z,cnt)
         x += label_nans(z.copy())
     return x
@@ -140,6 +140,8 @@ def show(xx,cnt,l):
     plt.ylabel('y')
 
     plt.colorbar(label='n')
+    
+    plt.tight_layout()
     plt.show()
     
 # select resolution and number of iterations to do.
@@ -149,7 +151,13 @@ itrs = 1000
 # choose the region of the comlex plane where to do the iterations. The reggion is centered around
 # cnt and has extent l. below are a few commen adresses. Uncomment to chose.
 
-cnt,l = -1.25066+ 0.02012j , 1.7e-4
+
+#cnt,l = -1.25066+ 0.02012j , 1.7e-4
+cnt , l = 0.2929859127507 + 0.6117848324958j , 1.0E-11
+cnt , l = 0.432539867562512 + 0.226118675951765j , 3.2e-6
+
+ 
+
 
 # set up input arrays
 c =C(cnt,l,dim)
