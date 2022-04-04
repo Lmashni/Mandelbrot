@@ -92,7 +92,7 @@ def divergence_map(z,cnt,itrs):
 def normalize(xx):
     return (xx.real+xx.real.min())/(xx.real+xx.real.min()).max()
 
-def show(Z,cnt,l):
+def show(xx,cnt,l):
     rc.update({'font.size': 12})
 
     plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
