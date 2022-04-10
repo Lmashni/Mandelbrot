@@ -129,9 +129,9 @@ def show(xx,cnt,l):
 
     #plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
     #plt.imshow(xx.real,alpha=normalize(xx**(2)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
-    plt.imshow(xx.real,alpha=normalize(1/xx**1),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
+    #plt.imshow(xx.real,alpha=normalize(1/xx**1),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
 
-    plt.imshow(xx.real,alpha=normalize(xx**(1)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
+    plt.imshow(xx.real,extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
     plt.title('diverged after n iteration of '
                   r'$z_{n}(c) = z_{n-1}² + c $'
                   '\n at   '
@@ -146,7 +146,7 @@ def show(xx,cnt,l):
     
 # select resolution and number of iterations to do.
 dim = 1024
-itrs = 1000
+itrs = 1500
 
 # choose the region of the comlex plane where to do the iterations. The reggion is centered around
 # cnt and has extent l. below are a few commen adresses. Uncomment to chose.
