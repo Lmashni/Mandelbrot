@@ -127,11 +127,11 @@ def normalize(xx):
 def show(xx,cnt,l):
     rc.update({'font.size': 7})
 
-    #plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
+    plt.imshow(xx.real,alpha=normalize(1/xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
     #plt.imshow(xx.real,alpha=normalize(xx**(2)),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
     #plt.imshow(xx.real,alpha=normalize(1/xx**1),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='inferno')
 
-    plt.imshow(xx.real,extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
+    plt.imshow(xx.real,alpha=normalize(xx),extent=[cnt.real-l,cnt.real+l,cnt.imag-l,cnt.imag+l],cmap='jet')
     plt.title('diverged after n iteration of '
                   r'$z_{n}(c) = z_{n-1}^{2} + c $'
                   '\n at   '
