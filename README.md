@@ -8,4 +8,4 @@ foo@bar:~$ python Mandelbaecker.py 0.432539867562512  0.226118675951765 3.2e-6
 foo
 ```
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/Lmashni/Mandelbrot/Fi.png)
