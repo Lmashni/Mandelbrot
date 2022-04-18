@@ -9,6 +9,7 @@ Created on Fri Feb 14 18:16:30 2020
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import rcParams as rc
+import argparse
 
 def C(cnt=0j, l=2, dim=128):
     """ 
@@ -143,29 +144,30 @@ def show(xx,cnt,l):
     
     plt.tight_layout()
     plt.show()
-    
-# select resolution and number of iterations to do.
-dim = 1024
-itrs = 1500
 
-# choose the region of the comlex plane where to do the iterations. The reggion is centered around
-# cnt and has extent l. below are a few commen adresses. Uncomment to chose.
+def arguments_parser():
+	parser = argparse.ArgumentParser(description="This is a summing program")
+	parser.add_argument('x', type=float,help="real part of center point")
+	parser.add_argument('y', type=float,help="imaginary part of center point")
+	parser.add_argument('l', type=float,help="extent of region of interest")
+	parser.add_argument('-r', type=int,default=1024,help="resolution")
+	parser.add_argument('-i', type=int,default=1000,help="resolution")
+	return parser.parse_args()
+
+def main(cnt , l , dim , itrs):
+	# set up input arrays
+	c =C(cnt,l,dim)
+	z =np.zeros((dim,dim))
+
+	# Make divergence map
+	div_map = divergence_map(z,c,itrs)
+	show(div_map,cnt,l)
+	
+if __name__ == "__main__":	
+
+	args = arguments_parser()
+	
+	x , y , l , dim , itrs = args.x,args.y,args.l,args.r,args.i
+	main(x+y*1j , l , dim , itrs)
 
 
-#cnt,l = -1.25066+ 0.02012j , 1.7e-4
-cnt , l = 0.2929859127507 + 0.6117848324958j , 1.0E-11
-cnt , l = 0.432539867562512 + 0.226118675951765j , 3.2e-6
-
- 
-
-
-# set up input arrays
-c =C(cnt,l,dim)
-z =np.zeros((dim,dim))
-
-# Make divergence map
-div_map = divergence_map(z,c,itrs)
-
-
-
-show(div_map,cnt,l)
