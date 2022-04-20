@@ -1,5 +1,9 @@
-#### Mandelbrot
-A python script to represent a part of the mandelbrot set for a given region of the complex plane. running in shell should produce a figure with some interesting  default setting. There are also some interesting Mandelbrot coordinates that can be uncommented in the code.
+# Mandelbrot
+A python script to represent a part of the mandelbrot set for a given region of the complex plane.
+
+The Mandelbrot set is made up of all complex numbers **c** for which the following iterative function remains bound:
+
+![](https://latex.codecogs.com/svg.image?\large&space;z_{n&plus;1}&space;=&space;z^{2}_n&space;&plus;&space;c)
 
 run this in your command line to preduce the image shown bellow
 
