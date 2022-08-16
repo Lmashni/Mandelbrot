@@ -1,5 +1,5 @@
 # Mandelbrot
-A python script to represent a part of the Mandelbrot set for a given region of the complex plane.
+A python script to represent a part of the Mandelbrot set for a given region of the complex plane..
 
 The Mandelbrot set is made up of all complex numbers **c** for which the following iterative function remains bound:
 
