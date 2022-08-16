@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/mandelbaecker.egg-info/PKG-INFO
+src/mandelbaecker.egg-info/SOURCES.txt
+src/mandelbaecker.egg-info/dependency_links.txt
+src/mandelbaecker.egg-info/top_level.txt
+src/mandelbrot/__init__.py
+src/mandelbrot/mandelbaecker.py
+src/mandelbrot/test_mandelbaecker.py

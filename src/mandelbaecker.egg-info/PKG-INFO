@@ -1,5 +1,18 @@
+Metadata-Version: 2.1
+Name: mandelbaecker
+Version: 0.0.1
+Summary: A small example package
+Author-email: Lyth Mashni <laithmashni@gmail.com>
+Project-URL: Homepage, https://github.com/Lmashni
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # Mandelbrot
-A python script to represent a part of the Mandelbrot set for a given region of the complex plane..
+A python script to represent a part of the Mandelbrot set for a given region of the complex plane.
 
 The Mandelbrot set is made up of all complex numbers **c** for which the following iterative function remains bound:
 
