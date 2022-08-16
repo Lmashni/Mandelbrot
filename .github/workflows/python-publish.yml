@@ -34,7 +34,7 @@ jobs:
     - name: Build package
       run: python -m build
     - name: Publish package
-      uses: python3 -m twine upload --repository testpypi dist/*
+      run: python3 -m twine upload --repository testpypi dist/*
       with:
         user: __token__
         password: pypi-AgENdGVzdC5weXBpLm9yZwIkYzQzZGU0MmQtNzNmYi00MDU3LTk2OTktOTc2ZTNlYjhiNjgwAAIleyJwZXJtaXNzaW9ucyI6ICJ1c2VyIiwgInZlcnNpb24iOiAxfQAABiCmGZf1ywHs2suOgG_CrqPhq2WJGF0e_FqCfuV3rVp-hA
