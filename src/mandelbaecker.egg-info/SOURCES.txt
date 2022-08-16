@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/mandelbaecker/__init__.py
+src/mandelbaecker/mandelbaecker.py
+src/mandelbaecker.egg-info/PKG-INFO
+src/mandelbaecker.egg-info/SOURCES.txt
+src/mandelbaecker.egg-info/dependency_links.txt
+src/mandelbaecker.egg-info/not-zip-safe
+src/mandelbaecker.egg-info/requires.txt
+src/mandelbaecker.egg-info/top_level.txt
