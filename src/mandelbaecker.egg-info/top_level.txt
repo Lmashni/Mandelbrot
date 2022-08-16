@@ -1,1 +1,1 @@
-mandelbaecker
+mandelbrot
