@@ -20,6 +20,6 @@ python Mandelbaecker.py 0.432539867562512  0.226118675951765 3.2e-6 -r 1024 -i 1
 
 ```
 
-here is a high resolution example of what the code produces
+here is a high resolution example of what the code produces:
 
 ![alt text](Fi.png)
